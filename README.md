@@ -46,6 +46,7 @@ Running Application (Service)
 - Exposed endpoint: GET /health
 
 ### 2️⃣ Dockerization
+```
 Dockerfile:
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
@@ -57,38 +58,51 @@ Commands:
 mvn clean package
 docker build -t myapp .
 docker run -p 9091:9090 myapp
+```
 
 ### 3️⃣ CI Pipeline (GitHub Actions)
+```
 - Checkout code
 - Setup Java
 - Build JAR
 - Build Docker image
+```
 
 ### 4️⃣ Push Image to Docker Hub
+```
 - Login using secrets
 - Tag image
 - Push image
+```
 
 ### 5️⃣ Kubernetes Deployment
+```
 deployment.yaml and service.yaml used
+```
 
 ### 6️⃣ Deploy
+```
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
+```
 
 ### 7️⃣ Verify
+```
 kubectl get pods
 kubectl get services
+```
 
 ### 8️⃣ Access
+```
 minikube service myapp-service
 Then open /health
+```
 
 ---
 
 ## 📁 Project Structure
 
-.
+```
 ├── src/
 ├── Dockerfile
 ├── pom.xml
@@ -96,6 +110,7 @@ Then open /health
 ├── k8s/
 │   ├── deployment.yaml
 │   ├── service.yaml
+```
 
 ---
 
